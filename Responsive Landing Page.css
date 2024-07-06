@@ -1,0 +1,83 @@
+/* CSS styles for the navigation menu */
+#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 1em;
+  text-align: center;
+  transition: background-color 0.5s ease;
+  z-index: 1000; /* ensure menu is on top of other elements */
+}
+
+#nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#nav li {
+  margin-right: 20px;
+  position: relative; /* for dropdown menu */
+}
+
+#nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.5s ease;
+}
+
+#nav a:hover {
+  color: #ccc;
+}
+
+#nav li:hover > a {
+  color: #fff; /* keep parent menu item text color white on hover */
+}
+
+#nav ul ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #979494e7;
+  padding: 1em;
+  display: none; /* hide dropdown menu by default */
+}
+
+#nav ul li:hover > ul {
+  display: block; /* show dropdown menu on hover */
+}
+
+#nav ul ul li {
+  margin-right: 0; /* remove margin for dropdown menu items */
+}
+
+#nav ul ul a {
+  color: #fff; /* set text color for dropdown menu items */
+}
+
+#nav ul ul a:hover {
+  color: #ccc; /* set hover text color for dropdown menu items */
+}
+
+/* styles for scrolled menu */
+.scrolled #nav {
+  background-color: #444;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* styles for hovered menu item */
+#nav li:hover {
+  background-color: #555;
+}
+
+/* styles for active menu item */
+#nav a.active {
+  color: #fff;
+  background-color: #666;
+  border-radius: 5px;
+  padding: 0.5em 1em;
+}
